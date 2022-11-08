@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./index.css" />
+	<title>Document</title>
+</head>
+
+<body>
+	<div class="container">
+		<div class="wrapper">
+			<svg class="heart" viewBox="0 0 32 29.6" width="100%" height="100%" onclick="handleClickHeart()" id="svg">
+				<path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+				  c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z" />
+			</svg>
+			<div class="hidden person-container" id="person-container">
+				<div class="male person" id="male">
+					<img
+						src="https://scontent.fhan15-2.fna.fbcdn.net/v/t39.30808-1/278772092_1858982077628572_3996416688530263542_n.jpg?stp=c0.40.240.240a_dst-jpg_p240x240&_nc_cat=110&ccb=1-7&_nc_sid=7206a8&_nc_ohc=Ei8rb8-uHYQAX-Rxzjw&_nc_ht=scontent.fhan15-2.fna&oh=00_AfCPhGNA6ySbHiwsmA_EO9ISW3iLQeg56w6lUcJOpITGzg&oe=636FC627" />
+				</div>
+				<div class="small-heart" id="small-heart">
+					<svg class="heart" viewBox="0 0 32 29.6" width="100%" height="100%">
+						<path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+				  c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z" />
+					</svg>
+				</div>
+				<div class="female person" id="female">
+					<img
+						src="https://scontent.fhan15-2.fna.fbcdn.net/v/t39.30808-1/302522037_3409911615916996_205734790025604619_n.jpg?stp=dst-jpg_p320x320&_nc_cat=100&ccb=1-7&_nc_sid=7206a8&_nc_ohc=XmmcMEV6d5UAX93pylO&_nc_ht=scontent.fhan15-2.fna&oh=00_AfCbN68pNZENq1kpw4pRiKJMWihRurDPOiq5wBOGx17h4g&oe=636E69FA" />
+				</div>
+			</div>
+			<div class="hidden" id="text-container">
+				<div class="a">
+					<p class="text-container" id="text">Anh yêu bé nhìu lắm á 😍</p>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+
+</body>
+
+
+<script>
+	const handleClickHeart = () => {
+		document.getElementById("svg").style.display = "none";
+		document.getElementById("person-container").classList.remove("hidden");
+		document.getElementById("text-container").classList.remove("hidden");
+
+
+		setTimeout(() => {
+			document.getElementById("male").classList.add("male-clicked");
+			document.getElementById("female").classList.add("female-clicked");
+			setTimeout(() => {
+				document.getElementById("small-heart").classList.add("small-heart-clicked");
+				setTimeout(() => {
+					document.getElementById("text").classList.add("text-container-clicked");
+
+				}, 500)
+			}, 600)
+
+
+		}, 1500)
+	}
+</script>
+
+</html>

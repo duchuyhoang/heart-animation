@@ -1,0 +1,159 @@
+body {
+	background-color: #18191A;
+}
+
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/* width: 100vw; */
+	height: 95vh;
+	box-sizing: border-box;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(1);
+	}
+
+	50% {
+		transform: scale(1.3);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
+
+.wrapper {
+	width: 50%;
+	height: 70%;
+	display: flex;
+	/* align-items: center; */
+	flex-wrap: wrap;
+}
+
+@media only screen and (max-width :768px) {
+	.wrapper {
+		width: 80%;
+	}
+
+	#text {
+		font-size: 22px;
+	}
+}
+
+.wrapper svg {
+	fill: rgba(255, 101, 186, 0.8);
+	animation: pulse 1s ease infinite;
+
+}
+
+.wrapper svg:hover {
+	transform: scale(1.2);
+}
+
+.avatar {
+	border-radius: 100%;
+}
+
+.hidden {
+	display: none!important;
+}
+
+.person {
+	width: 100px;
+	height: 100px;
+	border-radius: 100%;
+}
+
+.person img {
+	width: 100%;
+	height: 100%;
+	border-radius: 100%;
+
+}
+
+.person-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: nowrap;
+	width: 100%;
+}
+
+.male {
+	transform: translateX(-1000px);
+	transition: all 0.4s;
+	margin-right: 30px;
+
+}
+
+.male-clicked {
+	transform: translateX(0px)
+}
+
+.female {
+	transform: translateX(1000px);
+	transition: all 0.4s;
+	margin-left: 30px;
+
+}
+
+.female-clicked {
+	transform: translateX(0px)
+}
+
+.small-heart {
+	position: relative;
+	top: 5px;
+	width: 50px;
+	transition: all 0.4s;
+	transform: translateY(-500px);
+}
+
+.small-heart svg {
+	fill: red;
+}
+
+.small-heart-clicked {
+	transform: translateY(0px);
+
+}
+
+@keyframes type {
+	from {
+		width: 0;
+	}
+
+	to {
+		width: 100%;
+	}
+}
+
+#text-container {
+	width: 100%;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+}
+
+.text-container {
+	flex-grow: 1;
+	transition: all 0.4s;
+	white-space: nowrap;
+	overflow: hidden;
+	width: 0px;
+	animation-fill-mode: forwards;
+	text-align: center;
+}
+
+.text-container-clicked {
+	animation: type 1s steps(60, end) forwards;
+
+}
+
+#text {
+	font-size: 26px;
+	color: rgb(228, 230, 235)
+}
